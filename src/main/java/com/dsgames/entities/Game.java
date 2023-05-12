@@ -17,7 +17,6 @@ public class Game {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	private String teste;
 	@Column(name="game_year")
 	private Integer year;
 	private Double Score;
@@ -39,7 +38,6 @@ public class Game {
 		super();
 		this.id = id;
 		this.title = title;
-		this.teste = teste;
 		this.year = year;
 		Score = score;
 		this.genre = genre;
@@ -65,13 +63,6 @@ public class Game {
 		this.title = title;
 	}
 
-	public String getTeste() {
-		return teste;
-	}
-
-	public void setTeste(String teste) {
-		this.teste = teste;
-	}
 
 	public Integer getYear() {
 		return year;
