@@ -22,9 +22,17 @@ public class GameListController {
 	@Autowired
 	GameListService service;
 	
+	@Autowired
+	GameService gameService;
+	
 	@GetMapping
 	public List<GameListDTO> findall() {
 		return service.findAll();
+	}
+	
+	@GetMapping("/{listid}/games")
+	public List<GameMinDTO> findbylist(@PathVariable Long listid) {
+		return gameService.findByList(listid);
 	}
 
 }

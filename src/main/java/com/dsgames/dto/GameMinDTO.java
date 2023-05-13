@@ -1,6 +1,7 @@
 package com.dsgames.dto;
 
 import com.dsgames.entities.Game;
+import com.dsgames.projections.GameMinProjection;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
@@ -41,6 +42,15 @@ public class GameMinDTO {
 		this.title = entity.getTitle();
 		this.img_url = entity.getImageUrl();
 		this.shortDescription = entity.getShortDescription();
+		
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		this.id = projection.getId();
+		this.year = projection.getYear();
+		this.title = projection.getTitle();
+		this.img_url = projection.getImgUrl();
+		this.shortDescription = projection.getShortDescription();
 		
 	}
 	
